@@ -1,3 +1,15 @@
+const template = document.createElement('template');
+template.innerHTML = `
+  <style>
+    h3 {
+      color: 
+    }
+  </style>
+  <div class="user-card">
+    <h3></h3>
+  </div>
+`;
+
 class UserCard extends HTMLElement {
   constructor() {
     super();
@@ -5,9 +17,7 @@ class UserCard extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.innerHTML = `<style>h3 {color: coral}</style><h3>${this.getAttribute(
-      'name'
-    )}<\h3>`;
+    this.innerHTML = ``;
   }
 }
 
