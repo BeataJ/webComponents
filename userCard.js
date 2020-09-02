@@ -4,3 +4,5 @@ class UserCard extends HTMLElement {
     this.innerHTML = `John Doe`;
   }
 }
+
+window.customElements.define('user-card', UserCard);
