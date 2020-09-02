@@ -2,7 +2,7 @@ const template = document.createElement('template');
 template.innerHTML = `
   <style>
     h3 {
-      color: 
+      color: coral;
     }
   </style>
   <div class="user-card">
@@ -16,8 +16,9 @@ class UserCard extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
 
-    this.innerHTML = ``;
+    // this.innerHTML = ``;
   }
 }
 
