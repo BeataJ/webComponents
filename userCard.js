@@ -41,6 +41,8 @@ class UserCard extends HTMLElement {
   constructor() {
     super();
 
+    this.showInfo = true;
+
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
@@ -55,6 +57,10 @@ class UserCard extends HTMLElement {
     this.shadowRoot
       .querySelector('#toggle-info')
       .addEventListener('click', () => this.toggleInfo());
+  }
+
+  disconnectedCallback() {
+    this.shadowRoot.querySelector('#toggle-info').removeEventListener();
   }
 }
 
