@@ -50,7 +50,14 @@ class UserCard extends HTMLElement {
   }
 
   toggleInfo() {
-    console.log(123);
+    this.showInfo = !this.showInfo;
+
+    const info = this.shadowRoot.querySelector('.info');
+    const toggleBtn = this.shadowRoot.querySelector('#toggle-info');
+
+    if (this.showInfo) {
+    } else {
+    }
   }
 
   connectedCallback() {
