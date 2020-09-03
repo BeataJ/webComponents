@@ -47,7 +47,11 @@ class UserCard extends HTMLElement {
     this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
   }
 
-  connectedCallBack() {
+  toggleInfo() {
+    console.log(123);
+  }
+
+  connectedCallback() {
     this.shadowRoot
       .querySelector('#toggle-info')
       .addEventListener('click', () => this.toggleInfo());
