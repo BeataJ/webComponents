@@ -56,7 +56,11 @@ class UserCard extends HTMLElement {
     const toggleBtn = this.shadowRoot.querySelector('#toggle-info');
 
     if (this.showInfo) {
+      info.style.display = 'block';
+      toggleBtn.innerText = 'Hide Info';
     } else {
+      info.style.display = 'none';
+      toggleBtn.innerText = 'Show Info';
     }
   }
 
